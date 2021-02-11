@@ -9,7 +9,11 @@ class Calculation{
 
     //a method so that
     GetResults(){
-        return this.a + this.b;
+        return this.op(this.a, this.b);
+    }
+
+    GetResultsSquare(){
+        return this.op(this.a);
     }
 }
 
