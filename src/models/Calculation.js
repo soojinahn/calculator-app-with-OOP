@@ -11,10 +11,6 @@ class Calculation{
     GetResults(){
         return this.op(this.a, this.b);
     }
-
-    GetResultsSquare(){
-        return this.op(this.a);
-    }
 }
 
 module.exports = Calculation;

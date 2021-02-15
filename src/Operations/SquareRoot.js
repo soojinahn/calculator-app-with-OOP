@@ -1,4 +1,4 @@
-function SquareRoot(a){
+function SquareRoot(a, b){
     return Math.sqrt(a);
 }
 

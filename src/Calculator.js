@@ -38,20 +38,19 @@ class Calculator{
         return calculation.GetResults();
     }
 
-    static Square(a){
+    static Square(a, b){
         //this is how you create a new object and good for data and actions
-        let calculation = new Calculation(a, Square);
+        let calculation = new Calculation(a, b, Square);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
 
-    static SquareRoot(a){
+    static SquareRoot(a, b){
         //this is how you create a new object and good for data and actions
-        let calculation = new Calculation(a, SquareRoot);
+        let calculation = new Calculation(a, b, SquareRoot);
         Calculator.Calculations.push(calculation);
         return calculation.GetResults();
     }
-
 }
 
 module.exports = Calculator;

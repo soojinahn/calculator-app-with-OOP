@@ -26,13 +26,13 @@ test('Calculator dividing two numbers', () => {
 
 test('Calculator squaring a number', () => {
     //I need to test the instantiation of the calculation object
-    let result = Calculator.Square(1);
+    let result = Calculator.Square(1, 1);
     expect(result).toBe(1);
 });
 
 test('Calculator taking square root of a number', () => {
     //I need to test the instantiation of the calculation object
-    let result = Calculator.SquareRoot(1);
+    let result = Calculator.SquareRoot(1, 1);
     expect(result).toBe(1);
 });
 
