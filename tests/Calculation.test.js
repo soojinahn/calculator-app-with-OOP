@@ -1,9 +1,9 @@
-const Addition = require('../src/Operations/Addition');
-const Division = require('../src/Operations/Division');
-const Multiplication = require('../src/Operations/Multiplication');
-const Square = require('../src/Operations/Square');
-const SquareRoot = require('../src/Operations/SquareRoot');
-const Subtraction = require('../src/Operations/Subtraction');
+const Addition = require('../src/operations/Addition');
+const Division = require('../src/operations/Division');
+const Multiplication = require('../src/operations/Multiplication');
+const Square = require('../src/operations/Square');
+const SquareRoot = require('../src/operations/SquareRoot');
+const Subtraction = require('../src/operations/Subtraction');
 const Calculation = require("../src/models/Calculation");
 
 test('Testing calculation instantiation', () => {

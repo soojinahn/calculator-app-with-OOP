@@ -7,6 +7,10 @@ class Calculation{
         this.op = op;
     }
 
+    static make(a,b, op){
+        return new Calculation(a,b, op);
+    }
+
     //a method so that
     GetResults(){
         return this.op(this.a, this.b);
