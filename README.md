@@ -4,7 +4,7 @@
 Step 1: clone repo
 Step 2: "npm install"
 
-The 4 principles of Object-Oriented Programming
+**The 4 principles of Object-Oriented Programming**
 1. Encapsulation: 
    Each object needs to keep its state private (AKA their own private variables). Other objects can only call this object by a list of public functions. Meanwhile, the object will control its own state via methods.
    For example, in the Calculation.js file, we define a Calculation class. Here, we have a constructor that sets the variables and its private state. No other object from other classes can alter this state of this specific object. They can make another Calculation object, but not alter the existing one unless we make a method to do this. 
@@ -28,7 +28,7 @@ The 4 principles of Object-Oriented Programming
         }
         }
 
-module.exports = Calculation;
+         module.exports = Calculation;
 
 2. Abstraction:
     Each object should hide its internal implementation details to other objects and classes. In our calculator program, we have operational files, such as Addition.js. Although we call these functions in our other JS files (as seen with GetResults method), how Addition.js does the operation is hidden. This is abstraction.
@@ -60,7 +60,7 @@ module.exports = Calculation;
         }
 
 
-SOLID principles that are basic pillars of Object-Oriented Programming
+**SOLID principles that are basic pillars of Object-Oriented Programming**
 1. S - single responsibility principle:
    Single responsibility principle states that every function that you write should do exactly one thing. It is dividing the job so that every function/method has a single responsibility. In our Calculation.js we have a GetResults() method. This has a single responsibility of returning the results of the operation.
 
