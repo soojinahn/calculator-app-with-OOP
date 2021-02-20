@@ -1,5 +1,6 @@
 [![Coverage Status](https://coveralls.io/repos/github/soojinahn/is219-calculator/badge.svg?branch=main)](https://coveralls.io/github/soojinahn/is219-calculator?branch=main)
 [![Build Status](https://travis-ci.org/soojinahn/is219-calculator.svg?branch=main)](https://travis-ci.org/soojinahn/is219-calculator)
+
 Step 1: clone repo
 Step 2: "npm install"
 
