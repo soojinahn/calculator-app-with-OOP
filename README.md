@@ -28,7 +28,7 @@ Step 2: "npm install"
         }
         }
 
-module.exports = Calculation;
+         module.exports = Calculation;
 
 2. Abstraction:
     Each object should hide its internal implementation details to other objects and classes. In our calculator program, we have operational files, such as Addition.js. Although we call these functions in our other JS files (as seen with GetResults method), how Addition.js does the operation is hidden. This is abstraction.
