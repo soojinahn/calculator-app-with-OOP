@@ -84,33 +84,33 @@ Step 2: "npm install"
    This states that functions that use pointers or references to base classes must be able to use objects of derived classes without knowing it. This requires the objects of the subclasses to behave in the same way as the objects of the superclass. Let's look at an example below. 
 
 
-      class Rectangle {
-      constructor(height, width){
-         this.height = height;
-         this.width = width;
-      }
-      findParameter(height, width){
-         return length*2 + width*2;
-      }
-      setWidth(width){
-         this.width = width;
-      }
-      setHeight(height){
-         this.height = height;
-      }
-      }
+         class Rectangle {
+            constructor(height, width){
+               this.height = height;
+               this.width = width;
+            }
+            findParameter(height, width){
+               return length*2 + width*2;
+            }
+            setWidth(width){
+               this.width = width;
+            }
+            setHeight(height){
+               this.height = height;
+            }
+         }
 
    This code will act as a parent class for the child class, Square. Following the above code this test would pass:
 
-      Rectangle rect = new Rectangle(50,20);
-      setWidth(100);
-      assert.equal(20, rect.height);
+         Rectangle rect = new Rectangle(50,20);
+         setWidth(100);
+         assert.equal(20, rect.height);
 
    However, the derived class Square from Rectangle would act differently because a square has height and width that is always equal. 
 
-      Rectangle rect = new Square(20); //sets both width and height
-      setWidth(rect, 100);
-      assert.equal(20, rect.height);
+         Rectangle rect = new Square(20); //sets both width and height
+         setWidth(rect, 100);
+         assert.equal(20, rect.height);
 
    This test will fail because setting a square's width to 100 will also change its height. Therefore, Liskov's substitution principle is violated by deriving a Square from a Rectangle.
       
