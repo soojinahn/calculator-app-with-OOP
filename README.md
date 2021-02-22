@@ -85,19 +85,19 @@ Step 2: "npm install"
 
 
       class Rectangle {
-         constructor(height, width){
-            this.height = height;
-            this.width = width;
-         }
-         findParameter(height, width){
-            return length*2 + width*2;
-         }
-         setWidth(width){
-            this.width = width;
-         }
-         setHeight(height){
-            this.height = height;
-         }
+      constructor(height, width){
+         this.height = height;
+         this.width = width;
+      }
+      findParameter(height, width){
+         return length*2 + width*2;
+      }
+      setWidth(width){
+         this.width = width;
+      }
+      setHeight(height){
+         this.height = height;
+      }
       }
 
    This code will act as a parent class for the child class, Square. Following the above code this test would pass:
