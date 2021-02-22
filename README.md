@@ -89,9 +89,6 @@ Step 2: "npm install"
                this.height = height;
                this.width = width;
             }
-            findParameter(height, width){
-               return length*2 + width*2;
-            }
             setWidth(width){
                this.width = width;
             }
