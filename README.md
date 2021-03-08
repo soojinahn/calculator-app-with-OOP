@@ -196,70 +196,53 @@ _B) _Structural__
 
 Decorator: This design pattern allows clients to add new behaviors to objects. These are called "wrappers," or "decorators" that provide optional functionality if the user calls for it. This acts similarly to how inheritance works but without sacrificing the flexibility. Using wrappers in the Decorator Pattern can allow altering the behavior of the object at runtime as well as inherit behaviors of multiple classes at the same time. You can see it as a chain of behavior that can be added on or broken down depending on the client's needs.
 
-Our Calculator app is a great example of how wrappers can be used. In our app, the Calculator can perform multiple operation, including addition, subtraction, division, and multiplication.
+To apply a decorator to our calculator app, let's say you want to add an option to make our calculations round down. We are going to "wrap" the calculator with this functionality. This doesn't change the functionality of our main calculator component. It returns the calculation with the functionality that we want, which is to have it rounded to the nearest integer.
 
-      const Calculation = require("./models/Calculation");
-
-      class Calculator{
-      
-          static Calculations = [];
-          //static methods can be called wo instantiating and good for actions
-          static Addition(a,b){
-              //this is how you create a new object and good for data and actions
-              let calculation = Calculation.make(a,b, Addition);
-              return calculation;
-          }
-      
-          static Subtraction(a,b){
-              //this is how you create a new object and good for data and actions
-              let calculation = Calculation.make(a,b, Subtraction);
-              return calculation;
-          }
-      
-          static Multiplication(a,b){
-              //this is how you create a new object and good for data and actions
-              let calculation = Calculation.make(a,b, Multiplication);
-              return calculation;
-          }
-      
-          static Division(a,b){
-              //this is how you create a new object and good for data and actions
-              let calculation = Calculation.make(a,b, Division);
-              return calculation;
-          }
-      
+      //Calculation Component
+      GetResults() {
+         return this.op(this.a, this.b);
       }
 
-This calculator works perfectly fine with clients being able to access different operational functions within the calculator app. In addition, we are able to add more functionalities, or "wrappers," to decorate our calculator app even more. We can add the following code:
-
-      static Square(a, b){
-         let calculation = Calculation.make(a,b, Square);
-         return calculation;
+      //Decorator for Calculation object, calc 
+      GetResults(){
+         return Math.round(this.calc.GetResults());
       }
-      
-      static SquareRoot(a, b){
-         let calculation = Calculation.make(a,b, SquareRoot);
-         return calculation;
-      }
-
-Now, the calculator has more wrappers to work with and provides new behaviors for the users.
-
 
 _C) _Behavioral__
 
 Strategy: This pattern suggests you to create specific classes that do something in a lot of different ways. These classes are called "strategies." The main class must have a field for storing references to one of the strategies. This class delegates the work to the linked strategy instead of working on its own. It is useful when you want to use different variants of al algorithm within an object and be able to switch from one algorithm to another during runtime.
 
-In our calculator app, the different strategies are our operations. The operations are a family of algorithms and each of them have their own definitions and how to run them. They are therefore put into different classes, such as addition operation into Addition.js and division operation into Division.js. 
+In our calculator app, we can think of the different types of calculators as the different algorithms we are trying to implement with our design pattern. Let's say we want to have a basic calculator, a scientific calculator, and a graphing calculator. Our calculatorType will be the strategy that defines what type of calculator we will use.
 
-      function Addition(a,b) {
-         return a+b;
-      }
-      module.exports = Addition;
+      class Calculation{
+         
+         constructor(a,b,op){
 
-      function Division(a,b){
-         return a/b;
+         this.a = a;
+         this.b = b;
+         this.op = op;
          }
-      module.exports = Division;
+      }
+
+Each of these types of calculators can have a calculation functionality as seen above with our basic calculator calculation class. If we want to use a scientific calculator for unary operations (e.g. sine and cosine), the calculation class might look like the following:
+
+      class Calculation{
+         
+         constructor(a, op){
+
+         this.a = a;
+         this.op = op;
+         }
+
+          static Create(a, op){
+              return new Calculation(a, op);
+          }
+
+          GetResults(){
+              return this.op(this.a);
+          }
+      }
+
 
 
 
