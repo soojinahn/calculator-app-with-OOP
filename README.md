@@ -215,13 +215,21 @@ Strategy: This pattern suggests you to create specific classes that do something
 In our calculator app, we can think of the different types of calculators as the different algorithms we are trying to implement with our design pattern. Let's say we want to have a basic calculator, a scientific calculator, and a graphing calculator. Our calculatorType will be the strategy that defines what type of calculator we will use.
 
       class Calculation{
-         
+      
          constructor(a,b,op){
-
-         this.a = a;
-         this.b = b;
-         this.op = op;
+            this.a = a;
+            this.b = b;
+            this.op = op;
          }
+      
+          static Create(a,b, op){
+              return new Calculation(a,b, op);
+          }
+      
+          //a method so that
+          GetResults(){
+              return this.op(this.a, this.b);
+          }
       }
 
 Each of these types of calculators can have a calculation functionality as seen above with our basic calculator calculation class. If we want to use a scientific calculator for unary operations (e.g. sine and cosine), the calculation class might look like the following:
